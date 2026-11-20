@@ -1,0 +1,65 @@
+[
+  {
+    "path": "/archive",
+    "stage": "initial",
+    "method": "GET",
+    "status": 200,
+    "expected": {
+      "includes": "查询档号"
+    }
+  },
+  {
+    "path": "/archive/search?office=old&subject=B3",
+    "stage": "initial",
+    "method": "GET",
+    "status": 200,
+    "expected": {
+      "includes": "归属"
+    }
+  },
+  {
+    "path": "/archive/search?office=new&subject=B3",
+    "stage": "initial",
+    "method": "GET",
+    "status": 200,
+    "expected": {
+      "includes": "检索仍在出页"
+    }
+  },
+  {
+    "path": "/archive/requests",
+    "stage": "initial",
+    "method": "GET",
+    "status": 200,
+    "expected": {
+      "includes": "old W5 OD-5/2 已受理"
+    }
+  },
+  {
+    "path": "/archive/requests",
+    "stage": "released",
+    "method": "GET",
+    "status": 200,
+    "expected": {
+      "includes": "new W5 ND-9/1 已受理"
+    }
+  },
+  {
+    "path": "/scans/OD-5-2",
+    "stage": "released",
+    "method": "GET",
+    "status": 200,
+    "expected": {
+      "includes": "联章待核 原册第3页"
+    }
+  },
+  {
+    "path": "/scans/ND-9-1",
+    "stage": "handed",
+    "method": "GET",
+    "status": 200,
+    "expected": {
+      "includes": "明确替代签发号 K1"
+    }
+  }
+]

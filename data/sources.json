@@ -1,0 +1,82 @@
+{
+  "stages": {
+    "initial": {
+      "GET /archive": {
+        "type": "text/html; charset=utf-8",
+        "text": "<!doctype html><html lang=\"zh\"><meta charset=utf-8><main><h1>档案调阅</h1><form action=\"/archive/search\">\n <label>办理机关 <select name=\"office\"><option value=\"old\">原机关</option><option value=\"new\">承接机关</option></select></label>\n <label>企业短码 <input name=\"subject\" required></label>\n <button>查询档号</button></form><a href=\"/archive/requests\">领件流水</a></main></html>"
+      },
+      "GET /archive/search?office=old&subject=B3": {
+        "type": "text/html; charset=utf-8",
+        "text": "<!doctype html><html lang=\"zh\"><meta charset=utf-8><main><h1>原机关查询 Q7</h1><p>索引已封</p>\n <table><tr><th>档号</th><th>归属</th><th>册页</th><th>来源</th></tr><tr><td>OD-5</td><td>B3</td><td>FR-4/1–3</td><td>原册</td></tr><tr><td>OD-5</td><td>B8</td><td>FR-8/2</td><td>同名事项</td></tr></table>\n <form action=\"/archive/pull/old\" method=\"post\"><label>企业 <input name=\"subject\" required></label><label>档页 <input name=\"folio\" required></label><button>请求领件</button></form>\n <a href=\"/archive\">重开检索</a><a href=\"/archive/requests\">领件流水</a></main></html>"
+      },
+      "GET /archive/search?office=new&subject=B3": {
+        "type": "text/html; charset=utf-8",
+        "text": "<!doctype html><html lang=\"zh\"><meta charset=utf-8><main><h1>承接机关查询 Q7</h1><p>检索仍在出页</p>\n <table><tr><th>档号</th><th>归属</th><th>册页</th><th>来源</th></tr></table>\n <form action=\"/archive/pull/new\" method=\"post\"><label>企业 <input name=\"subject\" required></label><label>档页 <input name=\"folio\" required></label><button>请求领件</button></form>\n <a href=\"/archive\">重开检索</a><a href=\"/archive/requests\">领件流水</a></main></html>"
+      },
+      "GET /archive/search?office=old&subject=B8": {
+        "type": "text/html; charset=utf-8",
+        "text": "<!doctype html><html lang=\"zh\"><meta charset=utf-8><h1>原机关查询 Q8</h1><p>企业 B8 档页 OD-5，册页 FR-8/2</p></html>"
+      },
+      "POST /archive/pull/old": {
+        "type": "text/html; charset=utf-8",
+        "text": "<!doctype html><html lang=\"zh\"><meta charset=utf-8><main><h1>页面连接已关闭</h1><a href=\"/archive/requests\">领件流水</a></main></html>",
+        "form": {
+          "subject": [
+            "B3"
+          ],
+          "folio": [
+            "OD-5/2"
+          ]
+        }
+      },
+      "POST /archive/pull/new": {
+        "type": "text/html; charset=utf-8",
+        "text": "<!doctype html><html lang=\"zh\"><meta charset=utf-8><main><h1>承接机关已受理</h1><p>W5</p><a href=\"/archive/requests\">领件流水</a></main></html>",
+        "form": {
+          "subject": [
+            "B3"
+          ],
+          "folio": [
+            "ND-9/1"
+          ]
+        }
+      },
+      "GET /archive/requests": {
+        "type": "text/html; charset=utf-8",
+        "text": "<!doctype html><html lang=\"zh\"><meta charset=utf-8><main><h1>领件流水</h1><p>old W5 OD-5/2 已受理 <a href=\"/archive\">返回</a></p></main></html>"
+      }
+    },
+    "released": {
+      "GET /archive/search?office=new&subject=B3": {
+        "type": "text/html; charset=utf-8",
+        "text": "<!doctype html><html lang=\"zh\"><meta charset=utf-8><main><h1>承接机关查询 Q7</h1><p>索引已封</p>\n <table><tr><th>档号</th><th>归属</th><th>册页</th><th>来源</th></tr><tr><td>ND-9</td><td>B3</td><td>FR-4/1</td><td>OD-5 第 2 页</td></tr></table>\n <form action=\"/archive/pull/new\" method=\"post\"><label>企业 <input name=\"subject\" required></label><label>档页 <input name=\"folio\" required></label><button>请求领件</button></form>\n <a href=\"/archive\">重开检索</a><a href=\"/archive/requests\">领件流水</a></main></html>"
+      },
+      "GET /archive/requests": {
+        "type": "text/html; charset=utf-8",
+        "text": "<!doctype html><html lang=\"zh\"><meta charset=utf-8><main><h1>领件流水</h1><p>old W5 OD-5/2 文件可取 <a href=\"/scans/OD-5-2\">原册第2页</a></p><p>new W5 ND-9/1 已受理 <a href=\"/archive\">返回</a></p></main></html>"
+      },
+      "GET /scans/OD-5-2": {
+        "type": "text/html; charset=utf-8",
+        "text": "<!doctype html><html lang=\"zh\"><meta charset=utf-8><main><h1>原缴费回执</h1><p>签发号 K1 原机关 档号 OD-5 册页 FR-4/2</p><p>签发 17 适用于 10–22 归属 B3</p><p>联章待核 原册第3页</p></main></html>"
+      }
+    },
+    "handed": {
+      "GET /archive/search?office=new&subject=B3": {
+        "type": "text/html; charset=utf-8",
+        "text": "<!doctype html><html lang=\"zh\"><meta charset=utf-8><main><h1>承接机关查询 Q7</h1><p>索引已封</p>\n <table><tr><th>档号</th><th>归属</th><th>册页</th><th>来源</th></tr><tr><td>ND-9</td><td>B3</td><td>FR-4/1</td><td>OD-5 第 2 页</td></tr></table>\n <form action=\"/archive/pull/new\" method=\"post\"><label>企业 <input name=\"subject\" required></label><label>档页 <input name=\"folio\" required></label><button>请求领件</button></form>\n <a href=\"/archive\">重开检索</a><a href=\"/archive/requests\">领件流水</a></main></html>"
+      },
+      "GET /archive/requests": {
+        "type": "text/html; charset=utf-8",
+        "text": "<!doctype html><html lang=\"zh\"><meta charset=utf-8><main><h1>领件流水</h1><p>old W5 OD-5/2 文件可取 <a href=\"/scans/OD-5-2\">原册第2页</a></p><p>new W5 ND-9/1 文件可取 <a href=\"/scans/ND-9-1\">重打件</a></p></main></html>"
+      },
+      "GET /scans/OD-5-2": {
+        "type": "text/html; charset=utf-8",
+        "text": "<!doctype html><html lang=\"zh\"><meta charset=utf-8><main><h1>原缴费回执</h1><p>签发号 K1 原机关 档号 OD-5 册页 FR-4/2</p><p>签发 17 适用于 10–22 归属 B3</p><p>联章号 C1 来自旧页 FR-4/3，本页已验明</p></main></html>"
+      },
+      "GET /scans/ND-9-1": {
+        "type": "text/html; charset=utf-8",
+        "text": "<!doctype html><html lang=\"zh\"><meta charset=utf-8><main><h1>缴费回执重打件</h1><p>签发号 K5 承接机关 档号 ND-9 册页 FR-4/1</p><p>签发 26 适用于 23–40 归属 B3</p><p>承接原机关档号 OD-5/2，明确替代签发号 K1 的当前展示。</p></main></html>"
+      }
+    }
+  }
+}

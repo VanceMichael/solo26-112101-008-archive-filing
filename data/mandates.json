@@ -1,0 +1,50 @@
+[
+  {
+    "id": "MA-9",
+    "subject": "B3",
+    "from": 12,
+    "until": 41,
+    "offices": {
+      "old": [
+        "OD-5/2"
+      ],
+      "new": [
+        "ND-9/1"
+      ]
+    },
+    "quota": 2,
+    "transfer": {
+      "from": "old",
+      "to": "new",
+      "at": 23,
+      "old": "OD-5/2",
+      "new": "ND-9/1"
+    }
+  },
+  {
+    "id": "MA-9",
+    "revision": 2,
+    "subject": "B3",
+    "from": 12,
+    "until": 35,
+    "revokedAt": 35,
+    "offices": {
+      "old": [
+        "OD-5/2"
+      ]
+    },
+    "quota": 2
+  },
+  {
+    "id": "MA-12",
+    "subject": "B8",
+    "from": 9,
+    "until": 41,
+    "offices": {
+      "old": [
+        "OD-5/2"
+      ]
+    },
+    "quota": 1
+  }
+]
