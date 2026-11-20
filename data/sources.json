@@ -57,7 +57,7 @@
       },
       "GET /scans/OD-5-2": {
         "type": "text/html; charset=utf-8",
-        "text": "<!doctype html><html lang=\"zh\"><meta charset=utf-8><main><h1>原缴费回执</h1><p>签发号 K1 原机关 档号 OD-5 册页 FR-4/2</p><p>签发 17 适用于 10–22 归属 B3</p><p>联章待核 原册第3页</p></main></html>"
+        "text": "<!doctype html><html lang=\"zh\"><meta charset=utf-8><main><h1>原缴费回执</h1><p>签发号 K1 原机关 档号 OD-5 册页 FR-4/2</p><p>签发 17 适用于 10–22 归属 B3</p><p>联章待核 原册第3页</p><a href=\"/scans/OD-5-package\">查看扫描包清单</a></main></html>"
       },
       "GET /scans/OD-5-package": {
         "type": "text/html; charset=utf-8",
@@ -88,6 +88,42 @@
       "GET /scans/OD-5-3": {
         "type": "text/html; charset=utf-8",
         "text": "<!doctype html><html lang=\"zh\"><meta charset=utf-8><main><h1>单页联章</h1><p>归属 B3 册页 FR-4/3 联章号 C1 适用于 OD-5/2、OD-7/1</p></main></html>"
+      }
+    },
+    "quotaReview": {
+      "GET /archive/search?office=old&subject=B3": {
+        "type": "text/html; charset=utf-8",
+        "text": "<!doctype html><html lang=\"zh\"><meta charset=utf-8><main><h1>原机关查询 Q7</h1><p>索引已封</p><table><tr><td>OD-5</td><td>B3</td><td>FR-4/1–3</td></tr><tr><td>OD-7</td><td>B3</td><td>FR-4/4，参见本册第3页联章</td></tr></table><form action=\"/archive/pull/old\" method=\"post\"><label>企业 <input name=\"subject\" required></label><label>档页 <input name=\"folio\" required></label><button>请求领件</button></form><a href=\"/archive/requests\">领件流水</a></main></html>"
+      },
+      "GET /archive/requests": {
+        "type": "text/html; charset=utf-8",
+        "text": "<!doctype html><html lang=\"zh\"><meta charset=utf-8><main><h1>领件流水</h1><p>old W5 OD-5/2 文件可取 <a href=\"/scans/OD-5-2\">原册第2页</a></p><p>old W6 OD-5/3 已受理 <a href=\"/archive\">返回</a></p></main></html>"
+      },
+      "POST /archive/pull/old": {
+        "type": "text/html; charset=utf-8",
+        "text": "<!doctype html><html lang=\"zh\"><meta charset=utf-8><main><h1>页面连接已关闭</h1><a href=\"/archive/requests\">领件流水</a></main></html>",
+        "form": {
+          "subject": [
+            "B3"
+          ],
+          "folio": [
+            "OD-5/2",
+            "OD-5/3",
+            "OD-7/1"
+          ]
+        }
+      },
+      "GET /scans/OD-5-2": {
+        "type": "text/html; charset=utf-8",
+        "text": "<!doctype html><html lang=\"zh\"><meta charset=utf-8><main><h1>原缴费回执</h1><p>签发号 K1 原机关 档号 OD-5 册页 FR-4/2</p><p>签发 17 适用于 10–22 归属 B3</p><p>联章待核 原册第3页</p><a href=\"/scans/OD-5-package\">查看扫描包清单</a></main></html>"
+      },
+      "GET /scans/OD-5-package": {
+        "type": "text/html; charset=utf-8",
+        "text": "<!doctype html><html lang=\"zh\"><meta charset=utf-8><main><h1>扫描包 OD-5</h1><a href=\"/scans/OD-5-2\">FR-4/2 · B3</a><a href=\"/scans/OD-5-3-mismatch\">FR-8/3 · B8</a></main></html>"
+      },
+      "GET /scans/OD-5-3-mismatch": {
+        "type": "text/html; charset=utf-8",
+        "text": "<!doctype html><html lang=\"zh\"><meta charset=utf-8><main><h1>扫描件联章</h1><p>归属 B8 册页 FR-8/3 联章号 C1</p></main></html>"
       }
     }
   }

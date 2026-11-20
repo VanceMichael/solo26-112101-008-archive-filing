@@ -88,5 +88,14 @@
     "expected": {
       "includes": "适用于 OD-5/2、OD-7/1"
     }
+  },
+  {
+    "path": "/archive/requests",
+    "stage": "quotaReview",
+    "method": "GET",
+    "status": 200,
+    "expected": {
+      "includes": "old W6 OD-5/3 已受理"
+    }
   }
 ]
