@@ -61,5 +61,32 @@
     "expected": {
       "includes": "明确替代签发号 K1"
     }
+  },
+  {
+    "path": "/scans/OD-5-package",
+    "stage": "released",
+    "method": "GET",
+    "status": 200,
+    "expected": {
+      "includes": "FR-8/3 · B8"
+    }
+  },
+  {
+    "path": "/scans/OD-5-3-mismatch",
+    "stage": "released",
+    "method": "GET",
+    "status": 200,
+    "expected": {
+      "includes": "归属 B8"
+    }
+  },
+  {
+    "path": "/scans/OD-5-3",
+    "stage": "handed",
+    "method": "GET",
+    "status": 200,
+    "expected": {
+      "includes": "适用于 OD-5/2、OD-7/1"
+    }
   }
 ]

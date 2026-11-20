@@ -6,7 +6,9 @@
     "until": 41,
     "offices": {
       "old": [
-        "OD-5/2"
+        "OD-5/2",
+        "OD-5/3",
+        "OD-7/1"
       ],
       "new": [
         "ND-9/1"
@@ -19,6 +21,10 @@
       "at": 23,
       "old": "OD-5/2",
       "new": "ND-9/1"
+    },
+    "officeQuotas": {
+      "old": 1,
+      "new": 1
     }
   },
   {
@@ -33,7 +39,11 @@
         "OD-5/2"
       ]
     },
-    "quota": 2
+    "quota": 2,
+    "officeQuotas": {
+      "old": 1,
+      "new": 1
+    }
   },
   {
     "id": "MA-12",
@@ -45,6 +55,9 @@
         "OD-5/2"
       ]
     },
-    "quota": 1
+    "quota": 1,
+    "officeQuotas": {
+      "old": 1
+    }
   }
 ]

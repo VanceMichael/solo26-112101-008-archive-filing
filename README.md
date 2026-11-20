@@ -11,3 +11,7 @@
 `data/sources.json` 保存原始报文及站点页面。连续响应由来源按同一进程内的观察次数提供。阶段从 `initial` 启动，本地演练人员可用 `POST /scenario/阶段名` 切换，未覆盖的路由延用初始响应。切换不清空来源的请求记录。重开服务会复位。
 
 执行 `npm test` 核对来源契约。本机浏览器依赖由 Playwright 1.56.1 提供，可在首次准备时执行 `npx playwright install chromium`。容器方式可先执行 `docker build -t archive-filing-sources .`，再执行 `docker run --rm archive-filing-sources`。镜像准备完成后的验证不需要外网。
+
+## 扫描的联章页
+
+书面授权中的 `officeQuotas` 与 `quota` 分别是各机关和全委托的确认受理上限。以原机关的原册第 3 页为例，扫描清单中可能含同档号但不同企业的册页，不可使用该企业的联章号补其它企业档案。实际页头标有企业短码，扫描包外层不能替代该标识。

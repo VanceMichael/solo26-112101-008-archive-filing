@@ -58,6 +58,14 @@
       "GET /scans/OD-5-2": {
         "type": "text/html; charset=utf-8",
         "text": "<!doctype html><html lang=\"zh\"><meta charset=utf-8><main><h1>原缴费回执</h1><p>签发号 K1 原机关 档号 OD-5 册页 FR-4/2</p><p>签发 17 适用于 10–22 归属 B3</p><p>联章待核 原册第3页</p></main></html>"
+      },
+      "GET /scans/OD-5-package": {
+        "type": "text/html; charset=utf-8",
+        "text": "<!doctype html><html lang=\"zh\"><meta charset=utf-8><main><h1>扫描包 OD-5</h1><a href=\"/scans/OD-5-2\">FR-4/2 · B3</a><a href=\"/scans/OD-5-3-mismatch\">FR-8/3 · B8</a></main></html>"
+      },
+      "GET /scans/OD-5-3-mismatch": {
+        "type": "text/html; charset=utf-8",
+        "text": "<!doctype html><html lang=\"zh\"><meta charset=utf-8><main><h1>扫描件联章</h1><p>归属 B8 册页 FR-8/3 联章号 C1</p></main></html>"
       }
     },
     "handed": {
@@ -76,6 +84,10 @@
       "GET /scans/ND-9-1": {
         "type": "text/html; charset=utf-8",
         "text": "<!doctype html><html lang=\"zh\"><meta charset=utf-8><main><h1>缴费回执重打件</h1><p>签发号 K5 承接机关 档号 ND-9 册页 FR-4/1</p><p>签发 26 适用于 23–40 归属 B3</p><p>承接原机关档号 OD-5/2，明确替代签发号 K1 的当前展示。</p></main></html>"
+      },
+      "GET /scans/OD-5-3": {
+        "type": "text/html; charset=utf-8",
+        "text": "<!doctype html><html lang=\"zh\"><meta charset=utf-8><main><h1>单页联章</h1><p>归属 B3 册页 FR-4/3 联章号 C1 适用于 OD-5/2、OD-7/1</p></main></html>"
       }
     }
   }
