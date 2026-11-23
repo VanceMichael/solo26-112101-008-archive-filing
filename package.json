@@ -8,6 +8,7 @@
   },
   "scripts": {
     "sources": "node sources/server.mjs",
+    "demo": "node intake/demo.mjs",
     "test": "node --test test/*.test.mjs"
   },
   "devDependencies": {
